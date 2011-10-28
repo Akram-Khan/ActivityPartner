@@ -1,0 +1,31 @@
+<header>
+	<nav class="round">
+		<ul>
+			<%if signed_in?%>
+				<li><%=link_to "Notification | ", "#"%></li>
+				<li><%=link_to "Messages", "#"%></li>
+				<div class="messages-profile">
+					<li><%=link_to current_user.name, "#"%>
+					
+						<ul class="submenu">
+							<li><%=link_to "Profile", current_user%></li>
+							<li><%=link_to "Settings", edit_user_path(current_user)%></li>
+							<li><%=link_to "Sign Out", signout_path, :method => :delete%></li>
+						</ul>
+					
+					</li>
+				</div>
+		</ul>
+
+		<ul>								
+			<%else%>
+				<div class="messages-profile">	
+					<li><%=link_to "Sign In | ", signin_path%></li>
+					<li><%=link_to "Sign Up", signup_path%></li>
+				</div>
+			<%end%>	
+			
+		</ul>
+	
+	</nav>
+</header>

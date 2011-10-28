@@ -1,0 +1,3 @@
+<%=link_to "Sign Up", "#"%>
+
+<%=link_to "Sign In", "#"%>

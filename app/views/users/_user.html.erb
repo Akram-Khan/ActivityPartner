@@ -1,0 +1,13 @@
+<li>
+	<%if @user.avatar?%>
+		<%=image_tag(user.avatar_url(:thumb)).to_s%>
+	<%else%>
+		<%=image_tag 'rails.png'%>
+	<%end%>
+	<%=link_to user.name, user%>
+	
+	<%if current_user.admin?%>
+		<%=link_to "delete", user, :method => :delete, :confirm => "You Sure?",
+													   :title => "Delete #{user.name}"%>
+	<%end%>
+</li>

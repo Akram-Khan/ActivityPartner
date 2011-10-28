@@ -1,0 +1,7 @@
+
+<%=image_tag "akaruilabs logo.jpg", :alt => "ActivityPartner", :class => ""%>
+<%= form_tag("/search", :method => "get") do %>
+  <%= text_field_tag(:search, nil,:placeholder => "Find an Activity Partner nearby..", :class => "shadow search_area")%>
+  <%= link_to("Search", "#", :class => "search_button shadow") %>
+<% end %>
+

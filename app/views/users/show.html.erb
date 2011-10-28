@@ -1,0 +1,16 @@
+<table class = "profile" summary ="profile information">
+<tr>
+	<td class="main">
+		<h1>
+			<%=@user.name%>
+			//<%if @user.avatar?%>
+			//<%=image_tag(@user.avatar_url(:thumb)).to_s%>
+			//<%else%>
+			//<%=image_tag 'rails.png'%>
+			//<%end%>
+		</h1>
+
+			</td>
+
+</tr>
+</table>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=@title%></title>
+  
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "blueprint/screen", :media => "screen"%>
+  <%= stylesheet_link_tag "bluprint/print", :media => "print"%>
+  <%= stylesheet_link_tag "custom"%>
+
+</head>
+<body>
+
+	<div class="container">
+		<%=render 'layouts/header'%>
+	
+		<%if current_page?(root_path)%>
+			<div class="home_search_box">
+				<%=render 'layouts/search_form'%>
+			</div>
+		<%else%>
+			<div class="search_box">	
+				<%=render 'layouts/search_form'%>
+			</div>
+		<%end%>
+	
+		<section>
+			<%= yield %>
+		</section>
+		<%=render 'layouts/footer'%>
+	</div>
+
+</body>
+</html>
